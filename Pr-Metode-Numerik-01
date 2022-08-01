@@ -1,0 +1,34 @@
+# Carilah akar-akar persamaan berikut: f(x) = X^3 + X^2 -3X - 3 = 0
+def f(x) :
+  return x**3 + x**2 - 3*x - 3
+  
+def bisection(a,b,n):
+  i=1
+  condition = True
+  while condition:
+    x = (a+b)/2
+  if f(x)<0:
+    a=x
+  else :
+    b=x
+  print("iterasi = ", i, "x = ",x,"f(x) = ",f(x))
+  if i == n:
+    condition = False
+  else :
+    condition = True
+    i = i+1
+  print("Akar yang didapatkan : ",x)
+  
+a = input("a : ")
+b = input("b : ")
+n = input("Iterasi : ")
+a = float(a)
+b = float(b)
+n = int(n)
+
+if f(a)*f(b)>0:
+  print("Akar-akar perkiraan tidak sesuai.")
+  print("Coba lagi dengan nilai lain.")
+  
+else :
+  bisection(a,b,n)
